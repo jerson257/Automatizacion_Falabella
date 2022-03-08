@@ -1,7 +1,11 @@
 package com.falabella.www.stepdefinitions;
 
+import com.falabella.www.question.ValidarFormaPago;
+import com.falabella.www.task.AgregarProductoBolsa;
+import com.falabella.www.task.DespacharCompra;
 import com.falabella.www.task.NavegarA;
 import com.falabella.www.task.BuscarProducto;
+import com.falabella.www.userinterface.FormaPago;
 import com.falabella.www.userinterface.HomePage;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
@@ -11,6 +15,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
+import static org.hamcrest.Matchers.equalTo;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 public class StepDefinitionsCompraArticuloFalabella {
 
@@ -33,12 +39,13 @@ public class StepDefinitionsCompraArticuloFalabella {
     }
     @When("agregar al carrito el producto {string}")
     public void agregarProductoBolsaCompras(String producto) {
-        actor.attemptsTo(BuscarProducto.buscar(producto));
+        actor.attemptsTo(BuscarProducto.buscar(producto), AgregarProductoBolsa.agregar(), DespacharCompra.despachar());
     }
 
     @Then("Validar forma de pago del producto")
-    public void validacionFormaPago() {
-
+    public void validacionFormaPago(){
+        actor.should(seeThat(ValidarFormaPago.validacionInicio(FormaPago.RESUMENORDEN),
+                equalTo("Resumen de tu orden")));
     }
 
 }

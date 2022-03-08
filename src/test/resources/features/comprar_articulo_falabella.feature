@@ -4,5 +4,5 @@ Feature: Compra de articulo Falabella
 
   Scenario: Agregar producto a bolsa de compras
     Given se requiere buscar un producto para comprar
-    When agregar al carrito el producto "Reloj Hombre Fossil Neutra Fs5790"
+    When agregar al carrito el producto "Reloj Hombre Fossil Neutra Fs5384"
     Then Validar forma de pago del producto
