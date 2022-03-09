@@ -4,7 +4,7 @@
   <system-out><![CDATA[
 1 Scenarios (?[32m1 passed?[0m)
 3 Steps (?[32m3 passed?[0m)
-0m36,907s
+0m57,772s
 
 
 ]]></system-out>
@@ -26,8 +26,8 @@
 -------------------------------------------------------------------------------------
 ?[0m
 [Test worker] INFO  - Test Suite Started: Compra de articulo Falabella
-[pool-1-thread-1] INFO net.thucydides.core.reports.ReportService - net.thucydides.core.reports.json.JSONTestOutcomeReporter@2716dbff: Generating report for test outcome: Compra de articulo Falabella:Agregar producto a bolsa de compras
-[pool-2-thread-1] INFO net.thucydides.core.reports.ReportService - net.thucydides.core.reports.html.HtmlAcceptanceTestReporter@3847f254: Generating report for test outcome: Compra de articulo Falabella:Agregar producto a bolsa de compras
+[pool-1-thread-1] INFO net.thucydides.core.reports.ReportService - net.thucydides.core.reports.json.JSONTestOutcomeReporter@56ac2603: Generating report for test outcome: Compra de articulo Falabella:Agregar producto a bolsa de compras
+[pool-2-thread-1] INFO net.thucydides.core.reports.ReportService - net.thucydides.core.reports.html.HtmlAcceptanceTestReporter@7320b613: Generating report for test outcome: Compra de articulo Falabella:Agregar producto a bolsa de compras
 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Cleanup test resources for URI file:///F:/projects/Automatizacion_Falabella/src/test/resources/features/comprar_articulo_falabella.feature
 ]]></system-err>
 </testsuite>

@@ -15,6 +15,10 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
+
+import java.util.List;
+import java.util.Map;
+
 import static org.hamcrest.Matchers.equalTo;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
@@ -37,9 +41,10 @@ public class StepDefinitionsCompraArticuloFalabella {
         actor.wasAbleTo(NavegarA.on(home));
 
     }
-    @When("agregar al carrito el producto {string}")
-    public void agregarProductoBolsaCompras(String producto) {
-        actor.attemptsTo(BuscarProducto.buscar(producto), AgregarProductoBolsa.agregar(), DespacharCompra.despachar());
+    @When("agregar al carrito el producto")
+    public void agregarProductoBolsaCompras(List<Map<String, String>> listaDatos) {
+        Map<String, String> mapaDespacho = listaDatos.get(0);
+        actor.attemptsTo(BuscarProducto.buscar(mapaDespacho.get("producto")), AgregarProductoBolsa.agregar(), DespacharCompra.despachar(mapaDespacho.get("direccion"),mapaDespacho.get("complemento_direccion")));
     }
 
     @Then("Validar forma de pago del producto")
